@@ -1,0 +1,28 @@
+// Configuração para os cabeçalhos
+@hostname = localhost
+@port = 8000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+// Parans
+@quantity = 5
+@face = 12
+
+// Home
+GET http://{{host}}/ HTTP/1.1
+content-type: {{contentType}}
+###
+
+// Docs
+GET http://{{host}}/docs HTTP/1.1
+content-type: {{contentType}}
+###
+
+// Play
+GET http://{{host}}/items/5?q=somequery HTTP/1.1
+content-type: {{contentType}}
+###
+
+GET http://{{host}}/api/dice/play?quantity={{quantity}}&face={{face}} HTTP/1.1
+content-type: {{contentType}}
+###
